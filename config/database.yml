@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: Read_com_production
-  username: Read_com
-  password: <%= ENV['READ_COM_DATABASE_PASSWORD'] %>
+  username: root            #rootに変更
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
