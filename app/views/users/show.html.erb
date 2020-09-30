@@ -1,0 +1,10 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @books.each do |book| %>
+    <div class="content_post">
+      <p><%= book.book_name %></p>
+      <div class="genre"><%= book.genre[:name] %></div>
+      <span class="derection"><%= book.derection %></span>
+    </div>
+  <% end %>
+</div>
