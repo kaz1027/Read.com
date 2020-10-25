@@ -5,7 +5,6 @@ class BooksController < ApplicationController
 
   def new
     @books = Book.new
-    # @genre = Genre.new
   end
 
   def create
@@ -13,10 +12,11 @@ class BooksController < ApplicationController
   end
 
   def show
+    @books = Book.includes(:user).order("created_at DESC")
   end
 
   private
   def book_params
-    params.require(:book).permit(:book_name, :image, :genre_id, :derection).merge(user_id: current_user.id)
+    params.require(:book).permit(:title, :image, :genre_id, :derection).merge(user_id: current_user.id)
   end
 end
