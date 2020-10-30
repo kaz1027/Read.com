@@ -2,13 +2,11 @@
   <div class="contents__container">
     <div class="contents__container__form">
       <h3>アウトプットしたい本</h3>
-      <%= form_with(model: @book, local: true) do |form| %>
-        <%= form.text_field :book_name, placeholder: "本のタイトル  "   %>
-        <%= form.text_field :image, placeholder: "Image Url" %>
-        <%= form.collection_select :genre_id, Genre.all, :id,    :name, {prompt:"選択してください"} %>
+      <%= form_with model: @book, method: :post, local: true do |form| %>
+        <%= form.text_field :title, placeholder: "本のタイトル" %>
+        <%= form.collection_select :genre_id, Genre.all, :id, :name, {prompt:"選択してください"} %>
         <%= form.submit "次へ" %>
       <% end %>
-      <h1>test</h1>
     </div>
   </div>
 </div>

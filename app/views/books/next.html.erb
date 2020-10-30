@@ -1,0 +1,14 @@
+<div class="contents">
+  <div class="contents__container">
+    <div class="contents__container__form">
+      <div class="book-detals">の詳細の質問一覧</div>
+      <%= form_with model: @book, method: :post, local: true do |form| %>
+        <div class="question">面白かった箇所は？</div>
+        <%= form.text_field :output_tweets%>
+        <div class="question">本の構成</div>
+        <%= form.text_field :derection%>
+        <%= form.submit "保存" %>
+      <% end %>
+    </div>
+  </div>
+</div>
