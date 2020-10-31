@@ -5,7 +5,8 @@
       <%= form_with model: @book, method: :post, local: true do |form| %>
         <%= form.text_field :title, placeholder: "本のタイトル" %>
         <%= form.collection_select :genre_id, Genre.all, :id, :name, {prompt:"選択してください"} %>
-        <%= form.submit "次へ" %>
+        
+        <%= form.submit "登録" %>
       <% end %>
     </div>
   </div>
