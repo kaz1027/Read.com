@@ -1,5 +1,33 @@
 <div class="Top">
   <div class="Top__image">
     <img src="/assets/5918.jpg">
+    <div class="Top__image__derection">
+      <% if user_signed_in? %>
+        <h3 class="Top__image__derection__
+letter">読書で得た知識は定着させ実生活に取り入れることで初めて役に立ちます。</h3>
+        <h3 class="Top__image__derection__
+letter">〜今日も人生を変える読書を始めましょう〜</h3>
+        <ul>
+          <li><%= link_to "本の新規登録", new_book_path, class: "Top__image__derection__btn" %></li>
+          <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "Top__image__derection__btn"%></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, class: "Top__image__derection__btn", method: :delete %></li>
+          <li><%= link_to "知識の定着に役立つ情報", "#", class: "Top__image__derection__btn"%></li>
+        </ul>
+      <% else %>
+        <h3 class="Top__image__derection__
+letter">RRRead.Comは質問にお答えいただく形式の本のアウトプット専用サイトです。</h3>
+        <h3 class="Top__image__derection__
+letter">読書で得た知識は定着させ実生活に取り入れることで初めて役に立ちます。</h3>
+        <h3 class="Top__image__derection__letter">〜アウトプットして知識を定着させ人生を変える読書に〜</h3>
+        <ul>
+          <li><%= link_to "使い方" "#", class: "Top__image__derection__btn"%></li>
+          <li><%= link_to "アカウントを登録し早速始める（アカウントをお持ちでない方）", new_users_registration_path, class: "Top__image__derection__btn"%></li>
+          <%# <li><a href="#" class="Top__image__derection__btn"></a>アカウントを登録し早速始める（アカウントをお持ちでない方）</li> %>
+          <%# <li><a href="#" class="Top__image__derection__btn"></a>ログイン（アカウントをお持ちの方）</li> %>
+          <li><%= link_to "ログイン（アカウントをお持ちの方）", new_users_session_path, class: "Top__image__derection__btn"%></li>
+          <li><%= link_to "知識の定着に役立つ情報", "#", class: "Top__image__derection__btn"%></li>
+        </ul>
+      <% end %>
+    </div>
   </div>
 </div>

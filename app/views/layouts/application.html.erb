@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Khand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -37,7 +38,9 @@
         </ul>
       <% end %>
     </nav>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__name">©2020 RRRead.com</div>
+    </footer>
     <%= yield %>
   </body>
 </html>
