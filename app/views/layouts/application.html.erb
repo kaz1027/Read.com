@@ -12,35 +12,36 @@
   </head>
 
   <body>
-
-    <header class="header">
-      <div class="header__ber">
-        <h1 class="header__ber__logo"><a href="/books">RRRead.Com<a></h1>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-      </div>
-    </header>
-    <nav class="globalMenuSp">
-      <% if user_signed_in? %>
-        <ul>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "マイページ", "/users/#{current_user.id}"%></li>
-          <li><%= link_to "新規 output", new_book_path%></li>
-        </ul>
-      <% else %>
-        <ul>
-          <li><%= link_to "ログイン",   new_user_session_path %></li>
-          <li><%= link_to "新規登録", new_user_registration_path, class: "Menu__list" %></li>
-          <%= link_to "新規 output", new_user_registration_path, class: "Menu__list" %><li>
-        </ul>
-      <% end %>
-    </nav>
-    <footer class="footer">
-      <div class="footer__name">©2020 RRRead.com</div>
-    </footer>
-    <%= yield %>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__ber">
+          <h1 class="header__ber__logo"><a href="/  books">RRRead.Com<a></h1>
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        </div>
+      </header>
+      <nav class="globalMenuSp">
+        <% if user_signed_in? %>
+          <ul>
+            <li><%= link_to "ログアウト",   destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "マイページ", "/users/#  {current_user.id}"%></li>
+            <li><%= link_to "新規 output", new_book_path%></li>
+          </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to "ログイン",     new_user_session_path %></li>
+            <li><%= link_to "新規登録",   new_user_registration_path, class: "Menu__list"   %></li>
+            <%= link_to "新規 output",   new_user_registration_path, class: "Menu__list"   %><li>
+          </ul>
+        <% end %>
+      </nav>
+      <footer class="footer">
+        <div class="footer__name">©2020 RRRead.com</div>
+      </footer>
+      <%= yield %>
+    </div>
   </body>
 </html>

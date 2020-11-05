@@ -1,7 +1,17 @@
-<div class="side-bar">
-  <div class="book-title">
-  </div>
-</div>
+<div class="mypage">
+  <div class="side-bar">
+    <div class="side-bar__users-books">
+      <div class="side-bar__users-books__user-name"><%= @user.nickname %>さんの投稿一覧</div>
+      <div class="side-bar__users-books__each-books">
+        <% @books.each do |book|%>
+          <p><%= book.title %></p>
+        <% end %>
+          
+      </div>
+    </div>
 
-<div class="book-main">
-</div>
+  </div>
+  
+  <div class="book-main">
+  </div>
+<div>
