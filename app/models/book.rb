@@ -1,12 +1,10 @@
 class Book < ApplicationRecord
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :genre
+  belongs_to_active_hash :genre, presence: true
 
+  # 空データを登録できないようにする→presence
   validates :title, presence: true
+  validates :author, presence: true
 
-  with_options on: :next do
-    validates_presence_of :derection
-    validates_presence_of :output_tweets
-  end
 end
