@@ -1,17 +1,17 @@
 <div class="mypage">
   <div class="side-bar">
-    <div class="side-bar__users-books">
-      <div class="side-bar__users-books__user-name"><%= @user.nickname %>さんの投稿一覧</div>
-      <div class="side-bar__users-books__each-books">
-        <% @books.each do |book|%>
-          <p><%= book.title %></p>
-        <% end %>
-          
+    <div class="side-bar__user-name"><%= @user.nickname%>さんの投稿一覧</div>
+    <% @books.each do |book|%>
+      <%= link_to book_path do %>
+      <div class="side-bar__each-books">
+        <p class="side-bar__each-books__title">本のタイトル: <%= book.title %></p>
+        <p class="side-bar__each-books__title">著者: <%= book.author %></p>
+        <p>ジャンル: <%= book.genre_id %></p>
       </div>
-    </div>
-
+      <% end %>
+    <% end %>
+        
   </div>
   
-  <div class="book-main">
-  </div>
+  <%= render 'main_side' %>
 <div>
