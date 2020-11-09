@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.includes(:user).order("created_at DESC")
+    @book = Book.find(params[:id])
   end
 
   private

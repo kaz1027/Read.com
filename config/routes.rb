@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root "books#index"
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
+    :sessions => 'users/sessions'
   } 
 
   devise_scope :user do
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
     get "sign_out", :to => "users/sessions#destroy" 
   end
   
-  root "books#index"
+  # root "books#index"
   resources :users
   resources :books do
     # collection do

@@ -15,7 +15,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__ber">
-          <h1 class="header__ber__logo"><a href="/  books">RRRead.Com<a></h1>
+          <h1 class="header__ber__logo"><%= link_to "RRRead.com", root_path %></h1>
             <div class="hamburger">
               <span></span>
               <span></span>
@@ -28,13 +28,14 @@
           <ul>
             <li><%= link_to "ログアウト",   destroy_user_session_path, method: :delete %></li>
             <li><%= link_to "マイページ", "/users/#  {current_user.id}"%></li>
-            <li><%= link_to "新規 output", new_book_path%></li>
+            <li><%= link_to "本の新規登録", new_book_path%></li>
+            <li><%= link_to "使い方", "#" %><li>
           </ul>
         <% else %>
           <ul>
-            <li><%= link_to "ログイン",     new_user_session_path %></li>
-            <li><%= link_to "新規登録",   new_user_registration_path, class: "Menu__list"   %></li>
-            <%= link_to "新規 output",   new_user_registration_path, class: "Menu__list"   %><li>
+            <li><%= link_to "ログイン",     new_user_session_path%></li>
+            <li><%= link_to "新規登録",   new_user_registration_path %></li>
+            <li><%= link_to "使い方", "#" %><li>
           </ul>
         <% end %>
       </nav>
