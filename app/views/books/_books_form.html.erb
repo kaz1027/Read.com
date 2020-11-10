@@ -1,0 +1,71 @@
+<div class="contents">
+  <div class="contents__container">
+    <div class="contents__container__form">
+    <% if @book.persisted?%>
+      <div class="title"><%= @book.title %>の編集ページ</div>
+    <% else %>
+      <div class="title">アウトプットページ</div>
+    <% end %>
+      <%= form_for(@book) do |form| %>
+        <div class="question">アウトプットしたい本の題名を入力してください。</div>
+        <%= form.text_field :title, placeholder: "本のタイトル", class: "wrap-box" %>
+        <div class="question">本の著者名を入力してください。</div>
+        <%= form.text_field :author, placeholder: "著者", class: "wrap-box" %>
+        <div class="question">本のジャンルを下記よりお選びください。</div>
+        <%= form.collection_select :genre_id, Genre.all, :id, :name, {prompt:"選択してください"}, class: "wrap-box" %>
+        <div class="contents__container__form__book-detals">
+          <div class="title2">この本について、下記の質問にできる限り短い文章でお答えください。</div>
+          <div class="question">この本は何について問題としていますか？またその問題を解決する方法は？</div>
+          <%= form.text_field :output_tweets1, class: "wrap-box" %>
+          <div class="question">この本はどのように始まり、どのように終わりましたか？（本の構造は？）</div>
+          <%= form.text_field :output_tweets2, class: "wrap-box" %>
+          <div class="question">この本から何を学びましたか？</div>
+          <%= form.text_field :output_tweets3, class: "wrap-box" %>
+          <div class="question">あなたが思う、この本のキーポイントはなんですか？</div>
+          <%= form.text_field :output_tweets4, class: "wrap-box" %>
+          <div class="question">この本の、「チャート」や「グラフ」や「専門用語」から何を学びましたか？</div>
+          <%= form.text_field :output_tweets5, class: "wrap-box" %>
+          <div class="question">この本とあなたが今まで読んできた他の本と似ているところ、もしくは違うところはどんなところですか？</div>
+          <%= form.text_field :output_tweets6, class: "wrap-box" %>
+          <div class="question">この本を読んでどんな感情や感覚になりましたか？</div>
+          <%= form.text_field :output_tweets7, class: "wrap-box" %>
+          <div class="question">この本はあなたにとって重要な本ですか？重要な場合は何故重要と感じましたか？</div>
+          <%= form.text_field :output_tweets8, class: "wrap-box" %>
+          <div class="question">この本の作者が伝えたいことは何ですか？</div>
+          <%= form.text_field :output_tweets9, class: "wrap-box" %>
+          <div class="question">この本はいいタイトルですか？もしそうでなければどんなタイトルにしますか？</div>
+          <%= form.text_field :output_tweets10, class: "wrap-box" %>
+          <div class="question">この本の中の専門用語を使って作者が伝えたいことはどんなことですか？</div>
+          <%= form.text_field :output_tweets11, class: "wrap-box" %>
+          <div class="question">特に参考になった章はどの章ですか？</div>
+          <%= form.text_field :output_tweets12, class: "wrap-box" %>
+          <div class="question">この本の前書きは参考になりましたか？参考にならなかった場合、どのように書けば良かったか簡単にお答えください。</div>
+          <%= form.text_field :output_tweets13, class: "wrap-box" %>
+          <div class="question">作者はこの本を面白くするためにどのような工夫をしていますか？</div>
+          <%= form.text_field :output_tweets14, class: "wrap-box" %>
+          <div class="question">作者の主張のどこに賛成できますか？</div>
+          <%= form.text_field :output_tweets15, class: "wrap-box" %>
+          <div class="question">この本が変わっているところや特徴はどんなところですか？</div>
+          <%= form.text_field :output_tweets16, class: "wrap-box" %>
+          <div class="question">この本がテーマを説明するときにどんな事例を使って説明していますか？3つほどお答えください。</div>
+          <%= form.text_field :output_tweets17, class: "wrap-box" %>
+          <div class="question">この本で最も重要な一文はなんですか？また、その理由もお答えください。</div>
+          <%= form.text_field :output_tweets18, class: "wrap-box" %>
+          <div class="question">この本を説明するキャッチコピーを考えてお答えください。</div>
+          <%= form.text_field :output_tweets19, class: "wrap-box" %>
+          <div class="question">この本のどこが心に刺さりましたか？</div>
+          <%= form.text_field :output_tweets20, class: "wrap-box" %>
+          <div class="question">質問は以上です。</div>
+        </div>
+        <div class="title3">最後にこの本を要約し人に説明するための文章を作成してください。</div>
+        <%= form.text_area :derection, class: "books_summery" %>
+        <div class="question">入力お疲れ様でした。</div>
+        <% if @book.persisted?%>
+          <%= form.submit "変更する", class: "btn"%>
+        <% else %>
+          <%= form.submit "保存する", class: "btn"%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

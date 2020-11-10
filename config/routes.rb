@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root "books#index"
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
+    :sessions => 'users/sessions'
   } 
 
   devise_scope :user do
@@ -9,8 +10,12 @@ Rails.application.routes.draw do
     get "sign_out", :to => "users/sessions#destroy" 
   end
   
-  root "books#index"
-  resources :books
-  resources :users, only: :show
+  # root "books#index"
+  resources :users
+  resources :books do
+    # collection do
+    #   get 'next'
+    # end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,58 @@
+<div class="detail">
+  <div class="detail__book-name"><%= @book.title %>の詳細ページ</div>
+  <div class="questions">
+    <div class="questions__title">本のタイトル</div>
+    <p><%= @book.title %></p>
+    <div class="questions__title">著者</div>
+    <p><%= @book.author %></p>
+    <div class="questions__title">ジャンル</div>
+    <p><%= @book.genre.name %></p>
+    <div class="questions__question">この本は何について問題としていますか？またその問題を解決する方法は？
+</div>
+    <div class="questions-detail"><%= @book.output_tweets1 %></div>
+    <div class="questions__question">この本はどのように始まり、どのように終わりましたか？（本の構造は？）</div>
+    <div class="questions-detail"><%= @book.output_tweets2 %></div>
+    <div class="questions__question">この本から何を学びましたか？</div>
+    <div class="questions-detail"><%= @book.output_tweets3%></div>
+    <div class="questions__question">あなたが思う、この本のキーポイントはなんですか？</div>
+    <div class="questions-detail"><%= @book.output_tweets4 %></div>
+    <div class="questions__question">この本の、「チャート」や「グラフ」や「専門用語」から何を学びましたか？</div>
+    <div class="questions-detail"><%= @book.output_tweets5 %></div>
+    <div class="questions__question">この本とあなたが今まで読んできた他の本と似ているところ、もしくは違うところはどんなところですか？</div>
+    <div class="questions-detail"><%= @book.output_tweets6 %></div>
+    <div class="questions__question">この本を読んでどんな感情や感覚になりましたか？</div>
+    <div class="questions-detail"><%= @book.output_tweets7 %></div>
+    <div class="questions__question">この本はあなたにとって重要な本ですか？重要な場合は何故重要と感じましたか？</div>
+    <div class="questions-detail"><%= @book.output_tweets8 %></div>
+    <div class="questions__question">この本の作者が伝えたいことは何ですか？</div>
+    <div class="questions-detail"><%= @book.output_tweets9 %></div>
+    <div class="questions__question">この本はいいタイトルですか？もしそうでなければどんなタイトルにしますか？</div>
+    <div class="questions-detail"><%= @book.output_tweets10 %></div>
+    <div class="questions__question">この本の中の専門用語を使って作者が伝えたいことはどんなことですか？</div>
+    <div class="questions-detail"><%= @book.output_tweets11 %></div>
+    <div class="questions__question">特に参考になった章はどの章ですか？</div>
+    <div class="questions-detail"><%= @book.output_tweets12 %></div>
+    <div class="questions__question">この本の前書きは参考になりましたか？参考にならなかった場合、どのように書けば良かったか簡単にお答えください。</div>
+    <div class="questions-detail"><%= @book.output_tweets13 %></div>
+    <div class="questions__question">作者はこの本を面白くするためにどのような工夫をしていますか？</div>
+    <div class="questions-detail"><%= @book.output_tweets14 %></div>
+    <div class="questions__question">作者の主張のどこに賛成できますか？</div>
+    <div class="questions-detail"><%= @book.output_tweets15 %></div>
+    <div class="questions__question">この本が変わっているところや特徴はどんなところですか？</div>
+    <div class="questions-detail"><%= @book.output_tweets16 %></div>
+    <div class="questions__question">この本がテーマを説明するときにどんな事例を使って説明していますか？3つほどお答えください。</div>
+    <div class="questions-detail"><%= @book.output_tweets17 %></div>
+    <div class="questions__question">この本で最も重要な一文はなんですか？また、その理由もお答えください。</div>
+    <div class="questions-detail"><%= @book.output_tweets18 %></div>
+    <div class="questions__question">この本を説明するキャッチコピーを考えてお答えください。</div>
+    <div class="questions-detail"><%= @book.output_tweets19 %></div>
+    <div class="questions__question">この本のどこが心に刺さりましたか？</div>
+    <div class="questions-detail"><%= @book.output_tweets20 %></div>
+    <div class="questions__question">質問に対する答えは以上です</div>
+    <div class="questions__title3">あなたが作成した、この本の要約</div>
+    <div class="questions-detail"><%= @book.derection %></div>
+  </div>
+  <%= link_to "マイページに戻る", user_path, class: "detail-btn" %>
+  <%= link_to "編集する", edit_book_path, class: "detail-btn" %>
+  <%= link_to "この本を削除する", book_path, method: :delete, class: "detail-btn" %>
+</div>

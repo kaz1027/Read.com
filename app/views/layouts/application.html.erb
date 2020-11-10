@@ -6,28 +6,41 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Khand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__ber">
-        <h1 class="header__ber__logo"><a href="/books">RRRead.Com<a></h1>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__ber">
+          <h1 class="header__ber__logo"><%= link_to "RRRead.com", root_path %></h1>
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        </div>
+      </header>
+      <nav class="globalMenuSp">
         <% if user_signed_in? %>
-          <div class="header__ber__Menu">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%= link_to "マイページ", "/users/#{current_user.id}", class: "Menu__list" %>
-            <%= link_to "新規 output", new_book_path, class: "Menu__list" %>
-          </div>
+          <ul>
+            <li><%= link_to "ログアウト",   destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "マイページ", "/users/#  {current_user.id}"%></li>
+            <li><%= link_to "本の新規登録", new_book_path%></li>
+          </ul>
         <% else %>
-          <div class="header__ber__Menu">
-            <%= link_to "ログイン", new_user_session_path, class: "Menu__list" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "Menu__list" %>
-            <%= link_to "新規 output", new_user_registration_path, class: "Menu__list" %>
-          </div>
+          <ul>
+            <li><%= link_to "ログイン",     new_user_session_path%></li>
+            <li><%= link_to "新規登録",   new_user_registration_path %></li>
+          </ul>
         <% end %>
-      </div>
-    </header>
-    <%= yield %>
+      </nav>
+      <footer class="footer">
+        <div class="footer__name">©2020 RRRead.com</div>
+      </footer>
+      <%= yield %>
+    </div>
   </body>
 </html>

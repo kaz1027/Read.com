@@ -16,5 +16,9 @@
  @import "reset";
  @import "font-awesome-sprockets";
  @import "font-awesome";
- @import "modules/books";
+ @import "modules/index";
+ @import "modules/users_page";
+ @import "modules/new_book";
+ @import "modules/show_book";
  @import "devise/sessions_new.scss"
+ 

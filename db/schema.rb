@@ -14,11 +14,30 @@ ActiveRecord::Schema.define(version: 2020_09_11_015553) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "book_name", null: false
+    t.string "title", null: false
+    t.string "author"
     t.integer "genre_id", null: false
-    t.text "output_tweets"
+    t.text "output_tweets1"
+    t.text "output_tweets2"
+    t.text "output_tweets3"
+    t.text "output_tweets4"
+    t.text "output_tweets5"
+    t.text "output_tweets6"
+    t.text "output_tweets7"
+    t.text "output_tweets8"
+    t.text "output_tweets9"
+    t.text "output_tweets10"
+    t.text "output_tweets11"
+    t.text "output_tweets12"
+    t.text "output_tweets13"
+    t.text "output_tweets14"
+    t.text "output_tweets15"
+    t.text "output_tweets16"
+    t.text "output_tweets17"
+    t.text "output_tweets18"
+    t.text "output_tweets19"
+    t.text "output_tweets20"
     t.text "derection"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_books_on_user_id"

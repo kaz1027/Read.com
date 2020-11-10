@@ -1,12 +1,13 @@
 
 .box {
   width: 350px;
-  height: 4px;
-  margin: 60px auto 0;
-  border-radius: 4px;
-  border: 1px #ddd solid;
+  height: 400px;
+  margin: 130px auto;
+
   &__inner {
-    padding: 20px 26px;
+    border: 1px #ddd solid;
+    border-radius: 8px;
+    padding: 30px 30px 40px ;
   }
 }
 
@@ -60,6 +61,7 @@ h2 {
 }
 
 .column-right {
+  color: dimgray;
   float: right;
   font-size: 13px
 }
