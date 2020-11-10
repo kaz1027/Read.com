@@ -6,7 +6,7 @@
       <div class="left-side">
         <div class="left-side__menu">〜 OutPut Menu 〜</div>
         <ul>
-          <li><%= link_to "アウトプット", new_book_path, class: "left-side__btn" %></li>
+          <li><%= link_to "読んだ本をアウトプット", new_book_path, class: "left-side__btn" %></li>
           <li><%= link_to "マイページ", "/users/#{current_user.id}", class:"left-side__btn"%></  li>
           <li><%= link_to "ログアウト", destroy_user_session_path, class: "left-side__btn",    method:   :delete %></li>
         </ul>
