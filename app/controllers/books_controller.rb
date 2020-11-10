@@ -6,19 +6,12 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
   end
-
-  # def next
-  #   session[:title] = book_params[:title]
-  #   session[:author] = book_params[:author]
-  #   session[:genre_id] = book_params[:genre_id]
-  #   @book = Book.new
-  # end
-
+  
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "表示させたいメッセージ"
-      redirect_to root_path
+      flash[:notice] = "保存されました"
+      redirect_to user_path(@current_user.id)
     else
       render 'new'
     end
@@ -26,6 +19,27 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to user_path(@current_user.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    if @book.user_id == current_user.id
+      @book.destroy
+      redirect_to user_path(@current_user.id)
+    end
   end
 
   private

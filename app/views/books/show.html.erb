@@ -1,6 +1,12 @@
 <div class="detail">
   <div class="detail__book-name"><%= @book.title %>の詳細ページ</div>
   <div class="questions">
+    <div class="questions__title">本のタイトル</div>
+    <p><%= @book.title %></p>
+    <div class="questions__title">著者</div>
+    <p><%= @book.author %></p>
+    <div class="questions__title">ジャンル</div>
+    <p><%= @book.genre.name %></p>
     <div class="questions__question">この本は何について問題としていますか？またその問題を解決する方法は？
 </div>
     <div class="questions-detail"><%= @book.output_tweets1 %></div>
@@ -48,4 +54,5 @@
   </div>
   <%= link_to "マイページに戻る", user_path, class: "detail-btn" %>
   <%= link_to "編集する", edit_book_path, class: "detail-btn" %>
+  <%= link_to "この本を削除する", book_path, method: :delete, class: "detail-btn" %>
 </div>

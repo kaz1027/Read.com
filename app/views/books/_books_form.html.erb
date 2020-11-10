@@ -1,9 +1,12 @@
 <div class="contents">
   <div class="contents__container">
     <div class="contents__container__form">
+    <% if @book.persisted?%>
+      <div class="title"><%= @book.title %>の編集ページ</div>
+    <% else %>
       <div class="title">アウトプットページ</div>
-      <div class="title2">あなたが読んだ本に関して想起しながら下記の質問にお答えください。</div>
-      <%= form_for @book, method: :post, local: true do |form| %>
+    <% end %>
+      <%= form_for(@book) do |form| %>
         <div class="question">アウトプットしたい本の題名を入力してください。</div>
         <%= form.text_field :title, placeholder: "本のタイトル", class: "wrap-box" %>
         <div class="question">本の著者名を入力してください。</div>
@@ -57,7 +60,11 @@
         <div class="title3">最後にこの本を要約し人に説明するための文章を作成してください。</div>
         <%= form.text_area :derection, class: "books_summery" %>
         <div class="question">入力お疲れ様でした。</div>
-        <%= form.submit "保存する", class: "btn"%>
+        <% if @book.persisted?%>
+          <%= form.submit "変更する", class: "btn"%>
+        <% else %>
+          <%= form.submit "保存する", class: "btn"%>
+        <% end %>
       <% end %>
     </div>
   </div>
