@@ -12,10 +12,6 @@ Rails.application.routes.draw do
   
   # root "books#index"
   resources :users
-  resources :books do
-    # collection do
-    #   get 'next'
-    # end
-  end
+  resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
