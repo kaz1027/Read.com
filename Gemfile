@@ -41,6 +41,7 @@ end
 # 以下全てをGemfile下部にコピー
 group :production do
   gem 'unicorn'
+  gem 'listen', '~> 3.2'
 end
 
 group :development do
