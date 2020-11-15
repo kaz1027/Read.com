@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_015553) do
+ActiveRecord::Schema.define(version: 2020_11_15_132624) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.integer "genre_id", null: false
+    t.text "derection"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "title", null: false
     t.string "author"
-    t.integer "genre_id", null: false
     t.text "output_tweets1"
     t.text "output_tweets2"
     t.text "output_tweets3"
@@ -37,9 +40,6 @@ ActiveRecord::Schema.define(version: 2020_09_11_015553) do
     t.text "output_tweets18"
     t.text "output_tweets19"
     t.text "output_tweets20"
-    t.text "derection"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
