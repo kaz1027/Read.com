@@ -33,13 +33,13 @@
       color: lightsalmon;
     }
   }
-  .showPage-bottom {
+  .bottom {
     width: 100%;
-    margin: 0 auto;
     max-width: 500px;
+    margin: 0 auto;
     .detail-btn {
       display: inline-block;
-      width: 500px;
+      width: 100%;
       border: 2px solid;
       font-size: 16px;
       padding: 15px 16px 12px 16px;

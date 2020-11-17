@@ -51,7 +51,7 @@
     <div class="questions__title3">あなたが作成した、この本の要約</div>
     <div class="questions-detail"><%= @book.derection %></div>
   </div>
-  <div class="showPage-bottom">
+  <div class="bottom">
     <%= link_to "マイページに戻る", user_path, class: "detail-btn" %>
     <%= link_to "編集する", edit_book_path, class: "detail-btn" %>
     <%= link_to "この本を削除する", book_path, method: :delete, class:   "detail-btn" %>
