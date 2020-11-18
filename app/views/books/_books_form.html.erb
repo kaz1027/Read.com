@@ -60,12 +60,14 @@
         <div class="title3">最後にこの本を要約し人に説明するための文章を作成してください。</div>
         <%= form.text_area :derection, class: "books_summery" %>
         <div class="question">入力お疲れ様でした。</div>
+      <div class="bottom">
         <% if @book.persisted?%>
-          <%= form.submit "変更する", class: "btn"%>
-        <% else %>
-          <%= form.submit "保存する", class: "btn"%>
+            <%= form.submit "変更する", class: "btn"%>
+          <% else %>
+            <%= form.submit "保存する", class: "btn"%>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
