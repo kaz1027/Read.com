@@ -1,6 +1,6 @@
 <div class="mypage">
   <%# <img src="/assets/books2.jpg"> %>
-  <div class="mypage__user-name"><%= @user.nickname%> さんの投稿一覧</div>
+  <div class="mypage__user-name"><%= @user.nickname%> さんの本一覧</div>
   <div class="mypage__containar">
     <% @books.each do |book|%>
       <%= link_to book_path(book) do %>
