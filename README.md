@@ -43,6 +43,11 @@ RRRead.com は読んだ本の内容をより効率よく定着させるために
 - AWS(EC2, ECS, SSM, S3, CLI, route53)
 - 開発環境(MacOS, VScode, Git, GitHub)
 
+# インフラ構成図
+
+![Untitled Diagram](https://user-images.githubusercontent.com/67489015/100047278-6a924200-2e55-11eb-87eb-f2545e644be3.jpg)
+
+
 # 機能要件
 ## 本の登録
 　- 本のアウトプットを記入し保存する
