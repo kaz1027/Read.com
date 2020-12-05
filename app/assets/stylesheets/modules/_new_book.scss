@@ -60,22 +60,27 @@
         margin: 5px 10px;
         border:1px solid #ccc;
       }
-      .btn {
-        display: inline-block;
-        text-align: center;
-        width: 500px;
-        border:2px solid  ;
-        font-size: 16px;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 8px 16px;
-        border-radius: 10px;
-        color: #FFF;
-        margin-top: 20px;
-        background-color: #00bcd4;
-      }
-      .btn:hover {
-        background-color: #018091;
+      .bottom {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        .btn {
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+          border:2px solid  ;
+          font-size: 16px;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 8px 16px;
+          border-radius: 10px;
+          color: #FFF;
+          margin-top: 20px;
+          background-color: #00bcd4;
+        }
+        .btn:hover {
+          background-color: #018091;
+        }
       }
     }
   }
