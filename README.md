@@ -48,7 +48,7 @@ RRRead.com は読んだ本の内容をより効率よく定着させるために
 
 # インフラ構成図
 
-![Untitled Diagram](https://user-images.githubusercontent.com/67489015/100047278-6a924200-2e55-11eb-87eb-f2545e644be3.jpg)
+![Untitled Diagram](https://user-images.githubusercontent.com/67489015/101236298-70b8d600-3713-11eb-8c80-5ce2467c2630.png)
 
 
 # 機能要件
