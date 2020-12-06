@@ -18,6 +18,7 @@
         <ul>
           <li><%= link_to "アカウント作成", new_user_registration_path, class: "left-side__btn" %></li>
           <li><%= link_to "ログイン（アカウントをお持ちの方）", new_user_session_path, class:  "left-side__btn" %></li>
+          <li><%= link_to "ゲストログイン（閲覧用）", books_guest_sign_in_path, method: :post, class: "left-side__btn"%></li>
         </ul>
       </div>
     <%  end %>
